@@ -1,0 +1,11 @@
+.heading {
+    margin-top: 100px;
+    text-align: center;
+    color: rgb(255, 4, 0);
+}
+
+.paragraph {
+    margin-left: 80px;
+    margin-right: 80px;
+    color: rgb(0, 0, 0)
+}
