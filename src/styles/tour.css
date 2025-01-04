@@ -4,7 +4,7 @@
     padding: 2rem 0;
 }
 
-
+/*
 .pt-0 {
     padding-top: 0 !important;
 
@@ -22,8 +22,102 @@
     gap: 1rem;
     margin-top: 2rem;
 }
-
-/* General Section Styling */
+*/
+/* General Section Styling 
 .title {
     color: red;
+}
+    */
+.common-part {
+    padding: 2rem 0;
+    /* Adjust padding for a balanced look */
+}
+
+.common-part .title {
+    margin: 0 auto;
+    /* Center align the title */
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+.common-part h2.featured__tour-title {
+    font-size: 2rem;
+    /* Reduce font size for better alignment */
+    margin-top: 1rem;
+    /* Decrease the margin above */
+    margin-bottom: 1.5rem;
+    /* Slightly closer to the content below */
+    text-align: center;
+    color: var(--secondary-color);
+}
+
+.common-part .subtitle {
+    margin-bottom: 0.5rem;
+    /* Reduce spacing under the subtitle */
+    color: var(--text-color-light);
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+.featured__tour-title {
+    margin: 0 auto;
+    text-align: center;
+}
+
+.search-bar-section {
+    margin-bottom: 1rem;
+    /* Add spacing below the search bar */
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 2rem;
+    /* Add spacing above pagination */
+}
+
+.pagination span {
+    cursor: pointer;
+    padding: 0.5rem 1rem;
+    background-color: var(--secondary-color);
+    color: #fff;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.pagination span.active__page {
+    background-color: var(--primary-color);
+}
+
+.pagination span:hover {
+    background-color: var(--primary-hover-color);
+}
+
+/* Styles for the search bar */
+.search-bar-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    /* Adds margin from the header */
+}
+
+.search-bar {
+    width: 80%;
+    max-width: 500px;
+    padding: 10px 15px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    outline: none;
+    transition: all 0.3s ease-in-out;
+}
+
+.search-bar:focus {
+    border-color: #007bff;
+    box-shadow: 0 4px 8px rgba(0, 123, 255, 0.2);
 }

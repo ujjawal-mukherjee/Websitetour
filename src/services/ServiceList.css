@@ -1,0 +1,156 @@
+/* General container styling for the services */
+.service-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 20px;
+    justify-content: center;
+}
+
+/* Styling for individual service cards */
+.service-card {
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    text-align: center;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+    max-width: 300px;
+    flex: 1;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Styling for service card images */
+.service-card img {
+    width: 100px;
+    height: auto;
+    margin-bottom: 15px;
+}
+
+/* Styling for service titles */
+.service-card h3 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+/* Styling for service descriptions */
+.service-card p {
+    font-size: 1rem;
+    color: #555;
+}
+
+/* Search bar container styling */
+.search-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+    gap: 10px;
+}
+
+.search-container input[type="search"] {
+    width: 100%;
+    max-width: 500px;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+}
+
+.search-container button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.search-container button:hover {
+    background-color: #0056b3;
+}
+
+/* Result grid container */
+.result-container {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    gap: 20px;
+    margin-top: 20px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+/* History section styling */
+.result-container .history {
+    padding: 15px;
+    border-right: 1px solid #ddd;
+    background-color: #f9f9f9;
+}
+
+.result-container .history ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.result-container .history li {
+    font-size: 1rem;
+    color: #007bff;
+    margin-bottom: 10px;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.result-container .history li:hover {
+    color: #0056b3;
+}
+
+/* Weather result section */
+.result-container .weather-result {
+    padding: 20px;
+}
+
+.weather-result h2 {
+    font-size: 2rem;
+    color: #333;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.weather-result .temperature {
+    display: flex;
+    justify-content: space-around;
+    font-size: 1.5rem;
+    color: #555;
+    margin: 10px 0;
+}
+
+.weather-result .icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.weather-result .icon img {
+    width: 80px;
+    height: 80px;
+}
+
+.weather-result .status {
+    text-align: center;
+    font-size: 1.5rem;
+    color: #666;
+}

@@ -7,8 +7,8 @@ import './header.css';
 const nav__links = [
   { path: '/home', display: 'Home' },
   { path: '/about', display: 'About' },
-  { path: '/tours', display: 'Destinations' },
-  { path: '/intrest', display: 'Find by Interest' },
+  { path: '/tours', display: 'Locations' },
+  { path: '/intrest', display: 'Destinations by Interest' },
   { path: '/places', display: 'Places to stay' },
   { path: '/services', display: 'Services' }
 ];

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import '../styles/places.css';
 import hotel1 from '../assets/images/hotel1.jpg';
 import hotel2 from '../assets/images/hotel2.jpg';
@@ -6,8 +7,33 @@ import hotel3 from '../assets/images/hotel3.jpg';
 import hotel4 from '../assets/images/hotel4.jpg';
 import hotel5 from '../assets/images/hotel5.jpg';
 import hotel6 from '../assets/images/hotel6.jpg';
+
 const Places = () => {
     const [searchTerm, setSearchTerm] = useState('');
+    const navigate = useNavigate();
+
+    const isLoggedIn = !!localStorage.getItem('user'); // Check if user is logged in
+
+    const handleBookNow = async (hotel) => {
+        try {
+            const response = await fetch('http://localhost:5000/api/auth/check-login', {
+                credentials: 'include'
+            });
+            console.log(response);
+            if (response.ok) {
+                const data = await response.json();
+                const user = data.user;
+                navigate('/booking-form', { state: { user, hotel } });
+            } else {
+                alert('Please log in to book a hotel.');
+                navigate('/login');
+            }
+        } catch (error) {
+            console.error('Error checking login status:', error);
+            alert('Unable to verify login status. Please try again.');
+        }
+    };
+
 
     const cities = [
         {
@@ -109,7 +135,12 @@ const Places = () => {
                                             <p className="hotel-description">{hotel.description}</p>
                                             <div className="hotel-footer">
                                                 <span className="hotel-price">Starting from {hotel.price}</span>
-                                                <button className="book-now-btn">Book Now</button>
+                                                <button
+                                                    className="book-now-btn"
+                                                    onClick={() => handleBookNow(hotel)}
+                                                >
+                                                    Book Now
+                                                </button>
                                             </div>
                                         </div>
                                     </div>
@@ -124,3 +155,4 @@ const Places = () => {
 };
 
 export default Places;
+

@@ -38,6 +38,7 @@ const quick__links2 = [
 const Footer = () => {
   const year = new Date().getFullYear()
   return (
+    /*
     <footer className="footer">
       <Container>
         <Row>
@@ -125,6 +126,49 @@ const Footer = () => {
         </Row>
       </Container>
     </footer>
+    */
+    <footer class="footer">
+      <div class="container">
+        <div class="logo">
+          <img src={logo} alt="Logo" />
+          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Possimus, necessitatibus.</p>
+          <div class="social__links">
+            <span><Link to="#"><i className="ri-youtube-line"></i></Link></span>
+            <span><Link to="#"><i className="ri-github-fill"></i></Link></span>
+            <span><Link to="#"><i className="ri-facebook-circle-line"></i></Link></span>
+            <span><Link to="#"><i className="ri-instagram-line"></i></Link></span>
+          </div>
+        </div>
+        <div class="discover">
+          <h5 class="footer__link-title">Discover</h5>
+          <ul class="footer__quick-links">
+            {quick__links.map((item, index) => (
+              <li key={index}><Link to={item.path}>{item.display}</Link></li>
+            ))}
+          </ul>
+        </div>
+        <div class="quick-links">
+          <h5 class="footer__link-title">Quick Links</h5>
+          <ul class="footer__quick-links">
+            {quick__links2.map((item, index) => (
+              <li key={index}><Link to={item.path}>{item.display}</Link></li>
+            ))}
+          </ul>
+        </div>
+        <div class="contact-section">
+          <h5 class="footer__link-title">Contact</h5>
+          <ul class="footer__quick-links">
+            <li><p><i className="ri-map-pin-line"></i> Sylhet, Bangladesh</p></li>
+            <li><p><i className="ri-mail-line"></i> email01@gmail.com</p></li>
+            <li><p><i className="ri-phone-fill"></i> +0123456789</p></li>
+          </ul>
+        </div>
+      </div>
+      <div class="copyright">
+        Copyright {year}, design and develop by
+      </div>
+    </footer>
+
   )
 }
 

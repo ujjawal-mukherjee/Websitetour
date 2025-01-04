@@ -187,12 +187,7 @@ const Home = () => {
                 <span className="highlight">memories</span>
               </h1>
 
-              <p>
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Modi ut
-                voluptatum quisquam error facilis eum rerum, ratione accusamus
-                molestias fugiat consequatur repellendus pariatur numquam ea dolor!
-              </p>
-
+              <p>Welcome to my tour Website here you can serach different destinations around the world.You can serach diiferent places and also find places according to your intrest.</p>
               <div className="search-box">
                 <div className="search-item">
                   <span className="icon">📍</span>
@@ -227,6 +222,7 @@ const Home = () => {
           </div>
         </Container>
       </section>
+      {/*
       <section>
         <Container>
           <Row>
@@ -238,6 +234,7 @@ const Home = () => {
           </Row>
         </Container>
       </section>
+       */}
       <section>
         <Container>
           <Row>
@@ -258,11 +255,6 @@ const Home = () => {
               <div className="experience__content">
                 <Subtitle subtitle={'Experience'} />
                 <h2>With our all experience <br /> we will serve you</h2>
-                <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  <br />
-                  Quam veniam eveniet voluptate voluptatibus.
-                </p>
                 <div className="counter__wrapper d-flex align-items-center gap-5">
                   <div className="counter__box">
                     <span>12K+</span>

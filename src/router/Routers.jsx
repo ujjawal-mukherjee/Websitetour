@@ -11,11 +11,14 @@ import About from '../pages/About'
 import Intrest from '../pages/Intrest'
 import Places from '../pages/Places'
 import Services from '../services/ServiceList'
+import BookingForm from '../pages/BookingForm'
+import BookingForm1 from '../pages/BookingForm1'
+import LogoutButton from '../pages/Logout'
 const Routers = () => {
   return (
     <div>
       <Routes>
-        <Route path='/' element={<Navigate to='/register' />} />
+        <Route path='/' element={<Navigate to='/login' />} />
         <Route path='/home' element={<Home />} />
         <Route path='/tours' element={<Tours />} />
         <Route path='/tours/:id' element={<TourDetails />} />
@@ -27,6 +30,9 @@ const Routers = () => {
         <Route path='/intrest' element={<Intrest />} />
         <Route path='/places' element={<Places />} />
         <Route path='/services' element={<Services />} />
+        <Route path='/booking-form' element={<BookingForm />} />
+        <Route path='/booking-form1' element={<BookingForm />} />
+        <Route path='/logout' element={<LogoutButton />} />
       </Routes>
     </div>
   )

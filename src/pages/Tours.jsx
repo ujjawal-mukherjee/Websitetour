@@ -2,7 +2,8 @@ import React, { useEffect, useState } from 'react';
 import CommonSection from '../shared/CommonSection';
 import '../styles/tour.css';
 import FeaturedTourList from '../components/Featured-tours/FeaturedTourList';
-import tourData from '../assets/data/tours';
+//import tourData from '../assets/data/tours';
+import tours from '../assets/data/tours';
 import { Col, Container, Row } from 'reactstrap';
 import SearchBar from '../shared/SearchBar';
 import TourCard from '../shared/TourCard';
@@ -11,56 +12,51 @@ import Subtitle from '../shared/Subtitle';
 const Tours = () => {
   const [pageCount, setPageCount] = useState(0);
   const [page, setPage] = useState(0);
+  const [filteredTours, setFilteredTours] = useState(tours);
 
   useEffect(() => {
     // Replace `5` with backend data count for accurate calculation
     const pages = Math.ceil(5 / 4);
     setPageCount(pages);
   }, [page]);
+  const handleSearch = (criteria) => {
+    const { location, distance, maxGroupSize } = criteria;
+
+    const filtered = tours.filter((tour) => {
+      const matchesLocation =
+        location === '' || tour.title.toLowerCase().includes(location.toLowerCase());
+      const matchesDistance =
+        distance === 0 || parseInt(tour.price, 10) <= distance;
+      const matchesMaxGroupSize =
+        maxGroupSize === 0 || maxGroupSize <= 10; // Adjust as needed
+
+      return matchesLocation && matchesDistance && matchesMaxGroupSize;
+    });
+
+    setFilteredTours(filtered);
+  };
 
   return (
     <>
+      {/*
       <section className='common-part'>
-        {/* Common Section for Title */}
-        <CommonSection title="Visit Your Destination" className="title" />
-
-        {/* Search Bar Section */}
         {<section>
           <Container>
             <Row>
               <SearchBar />
             </Row>
           </Container>
-        </section>}
+        </section>*/}
+      <section className="common-part">
+        {/* Search Bar Section */}
+        <section>
+          <Container>
+            <Row>
+              <SearchBar onSearch={handleSearch} />
+            </Row>
+          </Container>
+        </section>
 
-        {/* Tours Display Section */}
-        {/*
-      <section className="pt-0">
-        <Container>
-          <Row>
-            {tourData?.map((tour) => (
-              <Col lg="3" className="mb-4" key={tour.id}>
-                <TourCard tour={tour} />
-              </Col>
-            ))}
-            <Col lg="12">
-             
-              <div className="pagination">
-                {[...Array(pageCount).keys()].map((number) => (
-                  <span
-                    key={number}
-                    onClick={() => setPage(number)}
-                    className={page === number ? 'active__page' : ''}
-                  >
-                    {number + 1}
-                  </span>
-                ))}
-              </div>
-            </Col>
-          </Row>
-        </Container>
-      </section>
-      */}
         <section>
           <Container>
             <Row>
@@ -72,7 +68,6 @@ const Tours = () => {
             </Row>
           </Container>
         </section>
-        {/* Newsletter Section */}
         <Newsletter />
       </section>
     </>
