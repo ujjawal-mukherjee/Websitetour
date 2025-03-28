@@ -56,7 +56,7 @@ const Allblog = () => {
                                     {cleanContent(blog.Blogdesc)}
                                 </div>
                                 <div className="blog-author">
-                                    By {cleanContent(blog.userName)}
+                                    By <strong className="highlight-author">{cleanContent(blog.userName)}</strong>
                                 </div>
                             </div>
                         </div>
