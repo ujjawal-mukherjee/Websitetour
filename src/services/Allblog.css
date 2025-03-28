@@ -1,34 +1,17 @@
 .blog-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 2rem 1rem;
-    /*margin-top: 100PX;*/
-}
-
-.blog-container {
-    width: 90%;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: #f9f9f9;
-    font-family: Arial, sans-serif;
-}
-
-.blog-header {
+    margin-top: 150px;
     text-align: center;
-    margin-bottom: 30px;
-}
-
-.blog-header h1 {
-    font-size: 3em;
-    color: #333;
-    text-transform: uppercase;
-    letter-spacing: 2px;
 }
 
 .blog-list {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
+    /* 3 equal columns */
     gap: 20px;
+    /* Space between cards */
+    justify-content: center;
+    margin-top: 80px;
+    margin-left: 30px;
 }
 
 .blog-card {
@@ -60,34 +43,23 @@
     padding: 15px;
 }
 
-.blog-destination {
-    font-size: 0.9em;
-    color: #777;
-    margin-bottom: 5px;
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .blog-list {
+        grid-template-columns: repeat(2, 1fr);
+        /* 2 cards per row on medium screens */
+    }
 }
 
-.blog-title {
-    font-size: 1.5em;
-    color: #333;
-    margin: 10px 0;
+@media (max-width: 768px) {
+    .blog-list {
+        grid-template-columns: repeat(1, 1fr);
+        /* 1 card per row on small screens */
+    }
 }
 
-.blog-desc {
-    font-size: 1em;
-    color: #555;
-    line-height: 1.5;
-    margin-bottom: 10px;
-}
-
-.blog-author {
-    font-size: 0.9em;
-    color: #999;
-    text-align: right;
-    font-style: italic;
-}
-
-.no-blogs {
-    text-align: center;
-    font-size: 1.2em;
-    color: #888;
+.highlight-author {
+    color: #d9534f;
+    /* Red or any color you prefer */
+    font-weight: bold;
 }
