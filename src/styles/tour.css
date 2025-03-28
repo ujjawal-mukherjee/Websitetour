@@ -1,4 +1,11 @@
 /* Ensures proper layout for the Tours component */
+.tour {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+    /*margin-top: 100PX;*/
+}
+
 .section {
     /*margin-bottom: 2rem;*/
     padding: 2rem 0;

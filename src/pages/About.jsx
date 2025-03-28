@@ -1,11 +1,13 @@
 import React from 'react'
 import '../styles/about.css'
+import logo from '../assets/images/world.png'
 import img from '../assets/images/ujjawal1.jpeg'
 const About = () => {
     return (
-        <div>
+        <div className='About'>
             <h2 className='heading'>About Our Website</h2>
             <div className='paragraph'>
+                <img src={logo} alt="Logo" className="responsive-logo_1" />
                 <p>Welcome to Travel World, your trusted companion in exploring the world’s most breathtaking destinations! We are a passionate team of travel enthusiasts dedicated to crafting memorable journeys that inspire and rejuvenate. Whether you’re seeking serene landscapes, vibrant cultural experiences, or thrilling adventures, we are here to turn your travel dreams into reality.Our platform offers curated tour packages, personalized itineraries, and expert guidance to ensure a seamless and enriching experience. From exotic getaways to hidden gems, we connect you with the best destinations while prioritizing comfort, safety, and sustainability.
                     Our platform offers curated tour packages, personalized itineraries, and expert guidance to ensure a seamless and enriching experience. From exotic getaways to hidden gems, we connect you with the best destinations while prioritizing comfort, safety, and sustainability.
 

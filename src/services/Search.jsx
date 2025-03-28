@@ -1,7 +1,7 @@
 import React, { useRef } from 'react';
 import './Search.css'; // Import the CSS
 
-export default function Search(props) {
+function Search(props) {
     const searchInput = useRef();
 
     return (
@@ -20,3 +20,4 @@ export default function Search(props) {
         </div>
     );
 }
+export default Search;

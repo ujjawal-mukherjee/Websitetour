@@ -2,9 +2,8 @@ import React, { useState } from 'react';
 import '../styles/login.css';
 import { Button, Col, Container, Form, FormGroup, Row } from 'reactstrap';
 import { Link, useNavigate } from 'react-router-dom';
-
-import loginImg from '../assets/images/login.png';
-import userIcon from '../assets/images/user.png';
+import loginImg from '../assets/images/login1.jpg';
+import userIcon from '../assets/images/user1.png';
 
 const Login = () => {
   const [credentials, setCredentials] = useState({ email: '', password: '' });
@@ -35,6 +34,7 @@ const Login = () => {
         setMessage('Login successful!');
         console.log('User data:', data);
         setTimeout(() => navigate('/home'), 2000); // Replace '/home' with your route
+        window.location.reload();
       }
     } catch (error) {
       console.error('Login error:', error);

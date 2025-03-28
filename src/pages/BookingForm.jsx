@@ -1,14 +1,33 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import '../styles/BookingForm.css';
-
+import ok from '../assets/images/ok.png';
 const BookingForm = () => {
     const navigate = useNavigate();
     const location = useLocation();
     const hotel = location.state?.hotel || {};
-
     const [numPersons, setNumPersons] = useState(1);
     const [specialRequests, setSpecialRequests] = useState('');
+    const [username, setUsername] = useState('');
+    const [showPopup, setShowPopup] = useState(false);
+
+    useEffect(() => {
+        const fetchUser = async () => {
+            try {
+                const response = await fetch('http://localhost:5000/api/auth/', {
+                    credentials: 'include'
+                });
+
+                if (response.ok) {
+                    const data = await response.json();
+                    setUsername(data.user.userName);
+                }
+            } catch (error) {
+                console.error('Error fetching user:', error);
+            }
+        };
+        fetchUser();
+    }, []);
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -19,19 +38,23 @@ const BookingForm = () => {
             numPersons,
             specialRequests,
         };
+
         try {
             const response = await fetch('http://localhost:5000/api/auth/bookings', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                credentials: 'include', // Include session cookies
+                credentials: 'include',
                 body: JSON.stringify(bookingData),
             });
 
             if (response.ok) {
-                alert('Booking successful!');
-                navigate('/bookings');
+                setShowPopup(true);
+                setTimeout(() => {
+                    setShowPopup(false);
+                    navigate('/home');
+                }, 3000);
             } else {
                 let errorData;
                 try {
@@ -49,6 +72,7 @@ const BookingForm = () => {
 
     return (
         <div className="booking-form-container">
+            <h2>Hello {username}</h2>
             <h2>Continue your booking at {hotel.name}</h2>
             <form onSubmit={handleSubmit} className="booking-form">
                 <div className="form-group">
@@ -75,6 +99,17 @@ const BookingForm = () => {
 
                 <button type="submit" className="submit-button">Confirm Booking</button>
             </form>
+
+            {/* Success Popup */}
+            {showPopup && (
+                <div className="popup">
+                    <div className="popup-content">
+                        <img src={ok} alt="Success" className="success-icon" />
+                        <h3>Booking Successful!</h3>
+                        <button onClick={() => setShowPopup(false)}>OK</button>
+                    </div>
+                </div>
+            )}
         </div>
     );
 };

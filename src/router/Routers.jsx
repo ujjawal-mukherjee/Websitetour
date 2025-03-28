@@ -14,6 +14,9 @@ import Services from '../services/ServiceList'
 import BookingForm from '../pages/BookingForm'
 import BookingForm1 from '../pages/BookingForm1'
 import LogoutButton from '../pages/Logout'
+import Weather from '../services/Weather'
+import Blog from '../services/Blog'
+import Allblog from '../services/Allblog'
 const Routers = () => {
   return (
     <div>
@@ -33,6 +36,9 @@ const Routers = () => {
         <Route path='/booking-form' element={<BookingForm />} />
         <Route path='/booking-form1' element={<BookingForm />} />
         <Route path='/logout' element={<LogoutButton />} />
+        <Route path='/weather' element={<Weather />} />
+        <Route path='/blog' element={<Blog />} />
+        <Route path='/allblog' element={<Allblog />} />
       </Routes>
     </div>
   )

@@ -81,6 +81,29 @@
     line-height: 1.5;
 }
 
+/*
+.logo img {
+    max-width: 180px;
+
+    height: auto;
+
+    display: block;
+
+    margin: 0 auto;
+
+    padding: 10px 0;
+
+}
+
+@media (max-width: 768px) {
+    .logo img {
+        max-width: 140px;
+
+        padding: 5px 0;
+    }
+}
+
+*/
 .social__links {
     margin-top: 1rem;
     display: flex;

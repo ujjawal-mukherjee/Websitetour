@@ -1,14 +1,44 @@
+.About {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+    /*margin-top: 100PX;*/
+}
+
 .heading {
     margin-top: 100px;
     text-align: center;
     color: #2563eb;
 }
 
+
+
+
 .paragraph {
-    margin: 20px 80px;
-    color: #000;
+    /*margin: 20px 80px;*/
     line-height: 1.6;
-    font-size: 1.1rem;
+    font-size: 1.7rem;
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #000;
+}
+
+.paragraph img {
+    max-width: 200px;
+    /* Adjust size as needed */
+    text-align: center;
+    height: auto;
+    border-radius: 50%;
+}
+
+/* Ensure logo scales properly on smaller screens */
+@media (max-width: 768px) {
+    .paragraph img {
+        max-width: 140px;
+        /* Reduce size for smaller screens */
+        padding: 5px 0;
+        /* Reduce padding */
+    }
 }
 
 .devloper {
@@ -28,9 +58,10 @@
 
 .devloper p {
     margin: 10px 20px;
-    color: #333;
     font-size: 1rem;
     line-height: 1.5;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
 }
 
 .devloper img {

@@ -1,4 +1,10 @@
 /* Responsive styles */
+.homes {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+    /*margin-top: 100PX;*/
+}
 
 .home {
     margin-top: 90px;
@@ -28,7 +34,7 @@
 
 .subtitle {
     padding: 0.5rem 1rem;
-    background: #faa935;
+    background: #007bff;
     color: #fff;
     border-radius: 20px;
     font-size: 1rem;
@@ -49,7 +55,7 @@ h1 {
 }
 
 .highlight {
-    color: #faa935;
+    color: #007bff;
 }
 
 p {
@@ -84,13 +90,13 @@ p {
 }
 
 .icon {
-    color: #faa935;
+    color: #007bff;
     font-size: 1.1rem;
 }
 
 .search-btn {
     padding: 0.6rem 1.5rem;
-    background: #faa935;
+    background: #007bff;
     color: #fff;
     border: none;
     border-radius: 50px;

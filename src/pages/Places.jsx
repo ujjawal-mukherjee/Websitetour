@@ -7,7 +7,9 @@ import hotel3 from '../assets/images/hotel3.jpg';
 import hotel4 from '../assets/images/hotel4.jpg';
 import hotel5 from '../assets/images/hotel5.jpg';
 import hotel6 from '../assets/images/hotel6.jpg';
-
+import hotel17 from '../assets/images/h11.jpg';
+import hotel18 from '../assets/images/h12.jpg';
+import hotel19 from '../assets/images/h13.jpg';
 const Places = () => {
     const [searchTerm, setSearchTerm] = useState('');
     const navigate = useNavigate();
@@ -19,7 +21,7 @@ const Places = () => {
             const response = await fetch('http://localhost:5000/api/auth/check-login', {
                 credentials: 'include'
             });
-            console.log(response);
+            console.log("response:..", response);
             if (response.ok) {
                 const data = await response.json();
                 const user = data.user;
@@ -52,15 +54,22 @@ const Places = () => {
                     price: "₹12,000",
                     rating: 4.7,
                     description: "5-star hotel with modern amenities and traditional hospitality."
-                }
+                },
+                {
+                    name: "The Leela Palace",
+                    image: hotel17,
+                    price: "₹12,000",
+                    rating: 4.7,
+                    description: "5-star hotel with modern amenities and traditional hospitality."
+                },
             ]
         },
         {
             name: "Mumbai",
             hotels: [
                 {
-                    name: "The Taj Mahal Palace",
-                    image: hotel3,
+                    name: "Hotel Taj",
+                    image: hotel5,
                     price: "₹20,000",
                     rating: 4.9,
                     description: "Iconic seafront hotel with stunning architecture and world-class service."
@@ -68,6 +77,13 @@ const Places = () => {
                 {
                     name: "The Oberoi",
                     image: hotel4,
+                    price: "₹18,000",
+                    rating: 4.8,
+                    description: "Contemporary luxury hotel with ocean views and gourmet restaurants."
+                },
+                {
+                    name: "ITC Grand chola",
+                    image: hotel18,
                     price: "₹18,000",
                     rating: 4.8,
                     description: "Contemporary luxury hotel with ocean views and gourmet restaurants."
@@ -90,6 +106,13 @@ const Places = () => {
                     price: "₹12,000",
                     rating: 4.6,
                     description: "Modern luxury hotel with traditional Rajasthani elements."
+                },
+                {
+                    name: "Jai Mahal Palace",
+                    image: hotel19,
+                    price: "₹18,000",
+                    rating: 4.8,
+                    description: "Contemporary luxury hotel with ocean views and gourmet restaurants."
                 }
             ]
         }

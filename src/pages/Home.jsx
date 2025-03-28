@@ -171,7 +171,7 @@ import Testimonials from '../components/Testimonial/Testimonials';
 import Newsletter from '../shared/Newsletter';
 const Home = () => {
   return (
-    <>
+    <div className='homes'>
       <section className="home">
         <Container>
           <div className="content-wrapper">
@@ -188,7 +188,7 @@ const Home = () => {
               </h1>
 
               <p>Welcome to my tour Website here you can serach different destinations around the world.You can serach diiferent places and also find places according to your intrest.</p>
-              <div className="search-box">
+              {/* <div className="search-box">
                 <div className="search-item">
                   <span className="icon">📍</span>
                   <input type="text" placeholder="Where are you going?" />
@@ -202,7 +202,7 @@ const Home = () => {
                   <input type="text" placeholder="Max People" />
                 </div>
                 <button className="search-btn">🔍</button>
-              </div>
+              </div>*/}
             </div>
 
             {/* Right side - Images */}
@@ -280,7 +280,7 @@ const Home = () => {
         </Container>
       </section>
 
-    </>
+    </div >
   )
 }
 

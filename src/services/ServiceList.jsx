@@ -1,14 +1,14 @@
+
 import React, { useState } from 'react';
 import ServiceCard from './ServiceCard';
 import { Col, Row } from 'reactstrap';
 import weatherImg from '../assets/images/weather.png';
 import guideImg from '../assets/images/guide.png';
-import customizationImg from '../assets/images/customization.png';
-import Search from './Search';
-import Result from './Result';
+import checkImg from '../assets/images/check_vlog.png'
+import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
-import { Container, Button } from 'reactstrap';
-import { Link, NavLink } from 'react-router-dom';
+import './ServiceList.css';
+
 const servicesData = [
     {
         imgUrl: weatherImg,
@@ -16,33 +16,47 @@ const servicesData = [
         title1: 'Click on the image icon to know the weather',
         desc: 'Get accurate weather information for any city.',
     },
-
     {
         imgUrl: guideImg,
-        title: 'Register your tourist place',
-        title1: 'Click on the image icon to register your tourist spot.',
-        desc: 'Register tourist spot and give detail information about your spot.',
+        title: 'Write Tour Blog',
+        title1: 'Click on the image icon to write the blog.',
+        desc: 'Write your Blog and review the visited Place.',
     },
-    /*
     {
-        imgUrl: customizationImg,
-        title: 'Customization',
-        desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
-    },
-    */
+        imgUrl: guideImg,
+        title: 'View Blog',
+        title1: 'Click on the image icon to View Tour blogs.',
+        desc: 'View Blogs of different tourists who visited different places',
+    }
 ];
 
 const ServiceList = () => {
-    const [search, setSearch] = useState('');
-    const [weather, setWeather] = useState([]);
-    const [history, setHistory] = useState([]);
-    const [selectedService, setSelectedService] = useState(null);
+    //const [search, setSearch] = useState('');
+    //const [weather, setWeather] = useState([]);
+    //const [history, setHistory] = useState([]);
+    //const [selectedService, setSelectedService] = useState(null);
+    const navigate = useNavigate();
 
-    const changeSearch = (value) => {
+    /*const changeSearch = (value) => {
         setSearch(value);
+    };*/
+
+    const Handleclick = (event, title) => {
+        if (event && event.preventDefault) {
+            event.preventDefault();
+        }
+        if (title === "Calculate Weather") {
+            navigate('/weather');
+        }
+        else if (title === "Write Tour Blog") {
+            navigate('/blog');
+        }
+        else if (title === "View Blog") {
+            navigate('/allblog');
+        }
     };
 
-    const searchWeatherHandler = () => {
+    /*const searchWeatherHandler = () => {
         if (search !== '') {
             axios.get(
                 `https://api.openweathermap.org/data/2.5/weather?q=${search}&appid=5e51e91dea41def853460e85e81878d0&units=metric`
@@ -57,58 +71,21 @@ const ServiceList = () => {
                     console.error(error);
                 });
         }
-    };
-
-    const historySearchHandler = (data) => {
-        setSearch(data);
-        if (data !== '') {
-            axios
-                .get(
-                    `https://api.openweathermap.org/data/2.5/weather?q=${search}&appid=5e51e91dea41def853460e85e81878d0&units=metric`
-                )
-                .then((response) => {
-                    if (!history.includes(data)) {
-                        setHistory([...history, data]);
-                    }
-                    setWeather(response.data);
-                })
-                .catch((error) => {
-                    console.error(error);
-                });
-        }
-    };
+    };*/
 
     return (
-        <>
+        <div className='services'>
             <Row>
                 {servicesData.map((item, index) => (
                     <Col lg="4" md="6" sm="12" key={index}>
                         <ServiceCard
                             item={item}
-                            clickHandler={setSelectedService}
+                            clickHandler={(event) => Handleclick(event, item.title)}
                         />
                     </Col>
                 ))}
             </Row>
-            {/* <Button className="btn secondary__btn">
-                <Link to={'/logout'}>Logout</Link>
-            </Button>*/}
-            {selectedService === 'Calculate Weather' && (
-                <div className="mt-5">
-                    <Search
-                        searchData={search}
-                        eventHandler={changeSearch}
-                        searchWeather={searchWeatherHandler}
-                    />
-                    <Result
-                        weatherData={weather}
-                        historyData={history}
-                        historySearch={historySearchHandler}
-                    />
-                </div>
-
-            )}
-        </>
+        </div>
     );
 };
 

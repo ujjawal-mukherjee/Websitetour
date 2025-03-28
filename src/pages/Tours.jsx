@@ -19,7 +19,7 @@ const Tours = () => {
     const pages = Math.ceil(5 / 4);
     setPageCount(pages);
   }, [page]);
-  const handleSearch = (criteria) => {
+  /*const handleSearch = (criteria) => {
     const { location, distance, maxGroupSize } = criteria;
 
     const filtered = tours.filter((tour) => {
@@ -34,10 +34,10 @@ const Tours = () => {
     });
 
     setFilteredTours(filtered);
-  };
+  };*/
 
   return (
-    <>
+    <div className='tour'>
       {/*
       <section className='common-part'>
         {<section>
@@ -49,13 +49,13 @@ const Tours = () => {
         </section>*/}
       <section className="common-part">
         {/* Search Bar Section */}
-        <section>
+        {/*<section>
           <Container>
             <Row>
               <SearchBar onSearch={handleSearch} />
             </Row>
           </Container>
-        </section>
+        </section>*/}
 
         <section>
           <Container>
@@ -70,7 +70,7 @@ const Tours = () => {
         </section>
         <Newsletter />
       </section>
-    </>
+    </div>
   );
 };
 

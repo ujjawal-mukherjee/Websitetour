@@ -1,12 +1,36 @@
 /* Header Styles */
 .header {
     width: 100%;
-    height: 80px;
+    height: 60px;
     line-height: 80px;
     background: #fff;
     position: relative;
     /* Removed sticky positioning */
     z-index: 999;
+}
+
+.logo img {
+    max-width: 200px;
+    /* Increase the width */
+    height: auto;
+    /* Maintain aspect ratio */
+    margin-top: 1px;
+    display: block;
+    /* Avoid inline spacing issues 
+    margin: 0 auto;*/
+    /* Center the image */
+    padding: 10px 0;
+    /* Add space above and below */
+}
+
+/* Ensure logo scales properly on smaller screens */
+@media (max-width: 768px) {
+    .logo img {
+        max-width: 140px;
+        /* Reduce size for smaller screens */
+        padding: 5px 0;
+        /* Reduce padding */
+    }
 }
 
 /* Navigation styling for a horizontal layout */

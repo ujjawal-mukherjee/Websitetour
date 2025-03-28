@@ -1,0 +1,20 @@
+.weather {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+}
+
+.weather-heading {
+    margin-top: 50px;
+    text-align: center;
+    font-size: 2.5rem;
+    color: #2d3748;
+    margin-bottom: 10px;
+}
+
+.weather-subheading {
+    text-align: center;
+    color: #4a5568;
+    margin-bottom: 20px;
+    font-style: italic;
+}
